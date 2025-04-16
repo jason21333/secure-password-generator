@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form id="password-form">
+        <div class="input-group">
+            <label for="length">Password Length</label>
+            <input type="number" id="length" name="length" value="12" min="4" max="128" required>
+        </div>
+        
+        <button type="submit" id="generate-btn">
+            Generate Secure Password
+        </button>
+    </form>
+
+    <div id="result">
+        <h2>Your Generated Password</h2>
+        <div id="password" title="Click to copy"></div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
