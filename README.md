@@ -1,5 +1,3 @@
-# password-generator-web/README.md
-
 # Password Generator Web Application
 
 A modern, secure password generator with an intuitive user interface.
