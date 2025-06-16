@@ -1,5 +1,3 @@
-# password-generator-web/README.md
-
 # Password Generator Web Application
 
 This is a web application for generating secure passwords. It provides a user-friendly interface that allows users to specify the length and criteria for the passwords they want to generate.
