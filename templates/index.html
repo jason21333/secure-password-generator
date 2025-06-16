@@ -1,19 +1,132 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <h1>Password Generator</h1>
-    <form id="password-form">
-        <label for="length">Password Length:</label>
-        <input type="number" id="length" name="length" value="12" min="4" required>
-        
-        <button type="submit">Generate Password</button>
-    </form>
-    <div id="result">
-        <h2>Generated Password:</h2>
-        <p id="password"></p>
+<div class="px-40 flex flex-1 justify-center py-5">
+    <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <h2 class="text-white tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Generate a Strong Password</h2>
+        <form id="password-form" class="flex flex-col">
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-white text-base font-medium leading-normal pb-2">Generated Password</p>
+                    <div class="flex gap-3 items-center">
+                        <input
+                            id="password"
+                            readonly
+                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border border-[#4d4d4d] bg-neutral-800 focus:border-[#4d4d4d] h-14 placeholder:text-[#adadad] p-[15px] text-base font-normal leading-normal"
+                            value=""
+                        />
+                        <div class="flex flex-col items-center gap-1 min-w-[80px]">
+                            <input
+                                type="range"
+                                id="length"
+                                name="length"
+                                min="4"
+                                max="32"
+                                value="12"
+                                class="w-full h-2 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-white"
+                            />
+                            <span id="length-value" class="text-white text-sm">12</span>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="flex max-w-[480px] px-4 py-3">
+                <div class="flex gap-2 w-full">
+                    <button
+                        type="submit"
+                        class="flex items-center justify-center overflow-hidden rounded-lg h-10 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] whitespace-nowrap flex-1 gap-2 group"
+                    >
+                        <div class="wand-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="transform transition-transform duration-300 group-hover:scale-110"
+                            >
+                                <path d="m3 21 9-9" class="wand-path" />
+                                <path d="M15 4V2" class="sparkle" />
+                                <path d="M15 16v-2" class="sparkle" />
+                                <path d="M8 9h2" class="sparkle" />
+                                <path d="M20 9h2" class="sparkle" />
+                                <path d="M17.8 11.8 19 13" class="sparkle" />
+                                <path d="M15 9h.01" class="sparkle" />
+                                <path d="M17.8 6.2 19 5" class="sparkle" />
+                                <path d="M12.2 6.2 11 5" class="sparkle" />
+                            </svg>
+                        </div>
+                        <span>Generate</span>
+                    </button>
+                    <button
+                        type="button"
+                        id="copy-button"
+                        class="flex items-center justify-center overflow-hidden rounded-lg h-10 bg-black text-white text-base font-bold leading-normal tracking-[0.015em] gap-2 whitespace-nowrap flex-1"
+                    >
+                        <div class="copy-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2" class="copy-rect" />
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" class="copy-path" />
+                            </svg>
+                        </div>
+                        <span>Copy</span>
+                    </button>
+                </div>
+            </div>
+            <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Password Options</h3>
+            <div class="px-4">
+                <label class="flex gap-x-3 py-3 flex-row">
+                    <input
+                        type="checkbox"
+                        name="uppercase"
+                        checked
+                        class="h-5 w-5 rounded border-[#4d4d4d] border-2 bg-transparent text-black checked:bg-black checked:border-black checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#4d4d4d] focus:outline-none"
+                    />
+                    <p class="text-white text-base font-normal leading-normal">Include Uppercase Letters</p>
+                </label>
+                <label class="flex gap-x-3 py-3 flex-row">
+                    <input
+                        type="checkbox"
+                        name="lowercase"
+                        checked
+                        class="h-5 w-5 rounded border-[#4d4d4d] border-2 bg-transparent text-black checked:bg-black checked:border-black checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#4d4d4d] focus:outline-none"
+                    />
+                    <p class="text-white text-base font-normal leading-normal">Include Lowercase Letters</p>
+                </label>
+                <label class="flex gap-x-3 py-3 flex-row">
+                    <input
+                        type="checkbox"
+                        name="numbers"
+                        checked
+                        class="h-5 w-5 rounded border-[#4d4d4d] border-2 bg-transparent text-black checked:bg-black checked:border-black checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#4d4d4d] focus:outline-none"
+                    />
+                    <p class="text-white text-base font-normal leading-normal">Include Numbers</p>
+                </label>
+                <label class="flex gap-x-3 py-3 flex-row">
+                    <input
+                        type="checkbox"
+                        name="symbols"
+                        checked
+                        class="h-5 w-5 rounded border-[#4d4d4d] border-2 bg-transparent text-black checked:bg-black checked:border-black checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#4d4d4d] focus:outline-none"
+                    />
+                    <p class="text-white text-base font-normal leading-normal">Include Symbols</p>
+                </label>
+            </div>
+        </form>
     </div>
 </div>
-
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% endblock %}
