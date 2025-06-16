@@ -2,7 +2,97 @@
 
 # Password Generator Web Application
 
-This is a web application for generating secure passwords. It provides a user-friendly interface that allows users to specify the length and criteria for the passwords they want to generate.
+A modern, secure password generator with an intuitive user interface.
+
+## Features
+
+- Generate strong passwords with customizable options
+- Real-time password length adjustment
+- Copy to clipboard functionality
+- Animated UI elements
+- Responsive design
+
+## Frontend Technologies
+
+- HTML5
+- CSS3 with Tailwind CSS
+- Vanilla JavaScript
+- Modern UI/UX design
+
+## UI Components
+
+### Password Generation Section
+- Password display field
+- Length slider (4-32 characters)
+- Generate button with animated wand icon
+- Copy button with animated copy icon
+
+### Password Options
+- Uppercase letters toggle
+- Lowercase letters toggle
+- Numbers toggle
+- Symbols toggle
+
+## Getting Started
+
+1. Clone the repository
+```bash
+git clone https://github.com/jason21333/secure-password-generator.git
+```
+
+2. Install dependencies
+```bash
+pip install flask
+```
+
+3. Run the application
+```bash
+python app.py
+```
+
+4. Open your browser and navigate to `http://127.0.0.1:5000`
+
+## UI Features
+
+### Password Length Slider
+- Interactive slider for password length
+- Real-time length value display
+- Range: 4-32 characters
+
+### Generate Button
+- Animated wand icon
+- Hover effects
+- Click animation
+
+### Copy Button
+- Animated copy icon
+- Visual feedback on copy
+- Smooth transitions
+
+### Password Options
+- Checkbox toggles
+- Custom styled checkboxes
+- Clear visual feedback
+
+## Styling
+
+The application uses Tailwind CSS for styling with custom animations:
+- Dark theme
+- Modern button designs
+- Smooth transitions
+- Responsive layout
+- Custom range input styling
+
+## Browser Support
+
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
 
 ## Project Structure
 
