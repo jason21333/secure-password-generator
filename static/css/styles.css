@@ -268,22 +268,32 @@ input[type="range"]:focus::-webkit-slider-thumb {
   .result button {
     width: 100%;
   }
-  .mobile-password-box {
-    display: block;
+  .mobile-password-section {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    margin: 20px 0 10px 0;
+    margin: 18px 0 10px 0;
+    padding: 0 0 8px 0;
   }
-  .mobile-password-box input {
+  .mobile-password-label {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    margin-left: 2px;
+  }
+  #password-mobile {
     width: 100%;
     font-size: 1.1rem;
-    padding: 10px;
+    padding: 12px 10px;
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 8px;
     background: #f9f9f9;
     color: #222;
     box-sizing: border-box;
+    margin-bottom: 0;
   }
-  .result input {
+  .mobile-password-box {
     display: none;
   }
 }
