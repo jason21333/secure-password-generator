@@ -5,6 +5,11 @@
     <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
         <h2 class="text-white tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Generate a Strong Password</h2>
         <form id="password-form" class="flex flex-col">
+            <!-- Mobile: Generated Password label and textbox above length selector -->
+            <div class="mobile-password-section">
+                <label for="password-mobile" class="mobile-password-label">Generated Password</label>
+                <input type="text" id="password-mobile" readonly placeholder="Your password will appear here">
+            </div>
             <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
                 <label class="flex flex-col min-w-40 flex-1">
                     <p class="text-white text-base font-medium leading-normal pb-2">Generated Password</p>
