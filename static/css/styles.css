@@ -268,4 +268,28 @@ input[type="range"]:focus::-webkit-slider-thumb {
   .result button {
     width: 100%;
   }
+  .mobile-password-box {
+    display: block;
+    width: 100%;
+    margin: 20px 0 10px 0;
+  }
+  .mobile-password-box input {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f9f9f9;
+    color: #222;
+    box-sizing: border-box;
+  }
+  .result input {
+    display: none;
+  }
+}
+
+@media (min-width: 601px) {
+  .mobile-password-box {
+    display: none;
+  }
 }
